@@ -28,11 +28,10 @@ var GetPrefix = cobra.Command{
 			}
 			ip = ips[0]
 		}
-		knownIp := net.ParseIP("192.0.0.171")
-		ip[12] = ip[12] - knownIp[12]
-		ip[13] = ip[13] - knownIp[13]
-		ip[14] = ip[14] - knownIp[14]
-		ip[15] = ip[15] - knownIp[15]
+		ip[12] = 0
+		ip[13] = 0
+		ip[14] = 0
+		ip[15] = 0
 		subnet := 0
 		for i := 15; i >= 0; i-- {
 			if ip[i] != 0 {
